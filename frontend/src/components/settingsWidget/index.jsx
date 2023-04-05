@@ -12,11 +12,10 @@ function SettingsModal({ showSettings, setShowSettings, showFilters, setShowFilt
     const Theme = useContext(ThemeContext);
     const { themeValue, changeTheme } = Theme;
     const [themeChecked, setThemeChecked] = useState(false);
-    const [weather, setWeather] = useState('celcius');
-    const [location, setLocation] = useState('Noida');
+
 
     const Settings = useContext(SettingsContext);
-    const { setActiveExportType, activeExportType } = Settings;
+    const { setActiveExportType, activeExportType, location, weather, setWeather, setLocation } = Settings;
 
     const toggleThemeHandler = () => {
         if (themeValue === 'dark') {
@@ -66,7 +65,8 @@ function SettingsModal({ showSettings, setShowSettings, showFilters, setShowFilt
                     Location
                     <div>
                         <input
-                            className=' searchbar
+                            className={` searchbar
+                            ${themeValue === 'dark' ? 'bg-[#444]' : 'bg-white'}
                             tracking-[1px]
                             w-[100%]
                             text-[13px]
@@ -75,13 +75,12 @@ function SettingsModal({ showSettings, setShowSettings, showFilters, setShowFilt
                             items-center 
                             gap-[15px] 
                             rounded-[5px]
-                            bg-white 
                             shadow-v7 
                             px-[20px] 
                             py-[10px]
                             border-[#e6e6e6]
                             border-[1px]
-                            '
+                            `}
                             value={location}
                             type='text'
                             onChange={(e) => setLocation(e.target.value)} />

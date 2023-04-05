@@ -34,6 +34,7 @@ module.exports = {
         'v5': '0px 4px 64px 8px rgba(0, 0, 0, 0.05)',
         'v6': ' 0px 0px 64px 8px rgba(0, 0, 0, 0.25)',
         'v7': '0px 0px 8px 2px rgba(0, 0, 0, 0.03)',
+        'v8' : '0px 0px 32px 16px rgba(0, 0, 0, 0.03)'
 
       }
     },

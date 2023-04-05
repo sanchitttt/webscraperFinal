@@ -14,7 +14,6 @@ function MainPageFooter() {
                 <span className='text-white ml-[30px]'>Copyrights 2023 @</span> <SpecialText>Yuvaraj Tuli</SpecialText> <span className='text-white'>,</span> <SpecialText>Sanchit Tewari</SpecialText>
             </BoxRow>
             <BoxRow className='gap-[15px] text-white mr-[25px]'>
-                <a href=''>Documentation</a>
                 <a href='' >Presentation</a>
                 <a href='' >Structure</a>
             </BoxRow>

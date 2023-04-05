@@ -15,6 +15,8 @@ import FilterModal from '../../components/filterWidget'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import filterBySearch from '../../utils/filterBySearch'
+import WeatherBox from '../../mini-components/weather-box'
+import BoxRow from '../../mini-components/flexbox-row'
 
 
 export const ThemeContext = createContext();
@@ -83,7 +85,8 @@ function MainPage() {
     const [searchValue, setSearchValue] = useState('');
     const [pageCount, setPageCount] = useState(1);
     const [activeExportType, setActiveExportType] = useState('json');
-
+    const [weather, setWeather] = useState('celcius');
+    const [location, setLocation] = useState('Noida');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -190,7 +193,7 @@ function MainPage() {
                 <LoadingContext.Provider value={{ percentageValue: percentageLoadingDone, setPercentage: setPercentageLoadingDone, setLoading: setIsLoading }}>
                     <FiltersContext.Provider value={{ quoraSelected: quoraSelected, setQuoraSelected: setQuoraSelected, twitterSelected: twitterSelected, setTwitterSelected: setTwitterSelected, youtubeSelected: youtubeSelected, setYoutubeSelected: setYoutubeSelected, redditSelected: redditSelected, setRedditSelected: setRedditSelected, sortSelectValue: sortSelectValue, setSortSelectValue: setSortSelectValue, typeSelected: typeSelected, setTypeSelected: setTypeSelected, dateFilter: dateFilter, setDateFilter: setDateFilter }}>
                         <SearchContext.Provider value={{ searchValue: searchValue, setSearchValue: setSearchValue }}>
-                            <SettingsContext.Provider value={{ activeExportType: activeExportType, setActiveExportType: setActiveExportType }}>
+                            <SettingsContext.Provider value={{ activeExportType: activeExportType, setActiveExportType: setActiveExportType, weather: weather, setWeather: setWeather, location: location, setLocation: setLocation }}>
                                 <div className={`${theme === 'dark' ? "bg-lightDark" : "bg-grey"} w-[100vw] h-[100vh] relative fadeIn`}>
                                     <PostWidgetIcons showSettings={showSettings} setShowSettings={setShowSettings} showSettingsHandler={showSettingsHandler} closeEverything={closeEverything} showFilters={showFilters} setShowFilters={setShowFilters} />
                                     <Navbar />
@@ -210,7 +213,10 @@ function MainPage() {
 
                                     <Box className='w-[100%] flex items-center justify-center' style={{ overflowX: 'hidden' }} >
                                         <Box className='w-[80%]'>
-                                            <DashboardWelcomeText name={name} email={email} />
+                                            <BoxRow className='justify-between'>
+                                                <DashboardWelcomeText name={name} email={email} />
+                                                <WeatherBox city={location} type={weather} />
+                                            </BoxRow>
                                             <Box className='grid mobile:grid-cols-1 desktop:grid-cols-8 gap-[20px] w-[100%] h-[100%] p-[20px]'>
                                                 {isLoading ?
                                                     <>

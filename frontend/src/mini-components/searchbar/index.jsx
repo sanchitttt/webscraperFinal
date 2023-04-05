@@ -18,7 +18,7 @@ function Searchbar({ value, onChange }) {
         flex 
         items-center 
         gap-[15px] 
-        rounded-[3px] 
+        rounded-[5px] 
         bg-white 
         shadow-v1 
         px-[10px] 
@@ -27,7 +27,7 @@ function Searchbar({ value, onChange }) {
         bigMobile:w-[400px]
         tablet:w-[300px] 
         desktop:w-[400px] 
-        bigScreens:w-[600px]
+        bigScreens:w-[750px]
         font-primary
         ${themeValue === 'dark' ? 'bg-[#555555]' : 'bg-white'}
         `}

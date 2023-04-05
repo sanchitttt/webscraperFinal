@@ -72,12 +72,12 @@ async function scrapeInfiniteScrollItems(page, numberOfItems, type, searchType) 
 };
 
 async function scrapeFromYoutubeUsingUrlAndType(url, type, searchType) {
-    const browser = await puppeteer.launch({
-        headless: true, args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-web-security',
-        ], ignoreHTTPSErrors: true, executablePath: executablePath()
+    const browser = await chrome.puppeteer.launch({
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless,
+        ignoreHTTPSErrors: true,
     });
     const page = await browser.newPage();
     const website = url;

@@ -100,10 +100,10 @@ async function scrapeInfiniteScrollItems(page, numberOfItems,searchType) {
 async function scrapeFromTwitter(keyword, searchType) {
 
     const browser = await chrome.puppeteer.launch({
-        args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath,
-        headless: chromium.headless,
+        args: chrome.args,
+        defaultViewport: chrome.defaultViewport,
+        executablePath: await chrome.executablePath,
+        headless: chrome.headless,
         ignoreHTTPSErrors: true,
     });
     const page = await browser.newPage();

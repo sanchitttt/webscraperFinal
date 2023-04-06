@@ -51,9 +51,28 @@ function Navbar() {
     const clickHandler = (e) => {
         e.preventDefault();
         const fn = async () => {
-            console.log(dataValue)
-            await postNewlyGeneratedData(dataValue)
-            document.getElementById('exportDataId').click();
+            if (activeExportType === 'json') {
+                if (searchValue.length) {
+                    await postNewlyGeneratedData(viewableData, 'json')
+                }
+                else {
+                    await postNewlyGeneratedData(dataValue, 'json')
+                }
+
+            }
+            else {
+                if (searchValue.length) {
+                    await postNewlyGeneratedData(viewableData, 'csv')
+                }
+                else {
+                    await postNewlyGeneratedData(dataValue, 'csv')
+                }
+
+            }
+            setTimeout(() => {
+                document.getElementById('exportDataId').click();
+            }, 3000);
+
         }
         fn();
     }
@@ -71,7 +90,7 @@ function Navbar() {
                         Export data
                     </PrimaryButton>
                 </div>
-                <a style={{ display: 'hidden' }} href={activeExportType==='json'?`http://localhost:5173/scratchMedia.json`:'http://localhost:5173/scratchMedia.xlsx'} download target='_blank' id='exportDataId' ></a>
+                <a style={{ display: 'hidden' }} href={activeExportType === 'json' ? `http://localhost:5173/scratchMedia.json` : 'http://localhost:5173/scratchMedia.xlsx'} download target='_blank' id='exportDataId' ></a>
                 <PrimaryButton
                     onClickHandler={regenerateHandler}
                 >Regenerate data</PrimaryButton>

@@ -1,4 +1,5 @@
 function filterBySearch(data, search) {
+
     search = search.toLowerCase();
     search = new RegExp(search, 'ig');
     let newArr = [];
@@ -7,7 +8,10 @@ function filterBySearch(data, search) {
             if (item.answer && (item.answer.match(search) !== null)) {
                 newArr.push(item);
             }
-            if (item.question && (item.question.match(search) !== null)) {
+            else if (item.name && (item.name.match(search) !== null)) {
+                newArr.push(item);
+            }
+            else if (item.question && (item.question.match(search) !== null)) {
                 newArr.push(item);
             }
         }
@@ -15,14 +19,27 @@ function filterBySearch(data, search) {
             if (item.question && (item.question.match(search) !== null)) {
                 newArr.push(item);
             }
+            else if (item.author && item.author.match(search) !== null) {
+                newArr.push(item);
+            }
+            else if (item.group && (item.group.match(search) !== null)) {
+                newArr.push(item);
+            }
         }
         else if (item.type === 'youtube') {
             if (item.title && (item.title.match(search) !== null)) {
                 newArr.push(item);
             }
+
         }
         else if (item.type === 'twitter') {
             if (item.text && (item.text.match(search) !== null)) {
+                newArr.push(item);
+            }
+            else if (item.name && (item.name.match(search) !== null)) {
+                newArr.push(item);
+            }
+            else if (item.handle && (item.handle.match(search) !== null)) {
                 newArr.push(item);
             }
         }

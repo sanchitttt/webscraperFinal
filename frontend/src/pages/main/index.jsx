@@ -177,6 +177,7 @@ function MainPage() {
             }
             else {
                 setViewabaleData([...searchFilteredResults])
+                setPageCount(searchFilteredResults.length > 10 ? Math.floor((searchFilteredResults.length) / 10) : 1)
             }
         }
     }, [searchValue])
@@ -213,7 +214,7 @@ function MainPage() {
 
                                     <Box className='w-[100%] flex items-center justify-center' style={{ overflowX: 'hidden' }} >
                                         <Box className='w-[80%]'>
-                                            <BoxRow className='justify-between'>
+                                            <BoxRow className='justify-between items-center'>
                                                 <DashboardWelcomeText name={name} email={email} />
                                                 <WeatherBox city={location} type={weather} />
                                             </BoxRow>
@@ -267,6 +268,10 @@ function MainPage() {
                                                     </>
                                                 }
                                             </Box>
+                                            {!viewableData.length && <div className='flex flex-col items-center justify-center my-[30px]'>
+                                                <img width={'100px'} src='https://i.ibb.co/CWYMH04/no-results.png' alt='no-data' />
+                                                <div className='text-[20px]' style={{ color: theme === 'dark' ? 'white' : '#444' }}>No records found!</div>
+                                            </div>}
                                         </Box>
                                     </Box>
 

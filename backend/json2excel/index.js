@@ -3,6 +3,11 @@ const ExcelJs = require("exceljs");
 
 
 async function jsonToExcel(quoraData, redditData, twitterData, youtubeData) {
+    // try {
+    //     fs.unlinkSync('C://Users/Sanchit/Desktop/webscraperFinal/frontend/users.xlsx');
+    // } catch (error) {
+    //     console.log(error);
+    // }
     const workBook = new ExcelJs.Workbook();
     const quoraWorkSheet = workBook.addWorksheet("Quora");
 

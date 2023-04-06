@@ -42,9 +42,9 @@ const fetchYoutube = async (keyword) => {
     }
 }
 
-const postNewlyGeneratedData = async (data) => {
+const postNewlyGeneratedData = async (data,type) => {
     try {
-        await axios.post(`${BACKEND_URL}/freshData`, { ...data });
+        await axios.post(`${BACKEND_URL}/freshData?type=${type}`, { ...data });
     } catch (error) {
 
     }

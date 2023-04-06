@@ -27,6 +27,7 @@ function makePostObject(str, timestamp, type, searchType, title) {
     return obj;
 }
 async function makeJSONObject(data, timestamps, type, searchType, titles) {
+    console.log(data);
     const finalResult = [];
     for (let i = 0; i < data.length; i++) {
         const textToObj = makePostObject(data[i], timestamps[i], type, searchType, titles[i]);

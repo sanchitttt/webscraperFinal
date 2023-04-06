@@ -205,7 +205,7 @@ function PostFooter({ likes, comments, className, type, textToBeCopied }) {
             <BoxRow className='gap-[5px] h-[100%]'
 
             >
-                <CopyIcon textToBeCopied={textToBeCopied} />
+                {/* <CopyIcon textToBeCopied={textToBeCopied} /> */}
                 {/* <div className={`${themeValue === 'dark' ? "text-white" : "text-[#444444]"} text-primary font-bold text-[12px]`} style={{ lineHeight: '18px', letterSpacing: '0.5px', textTransform: 'capitalize' }} role='button' aria-describedby='button'>Copy</div> */}
             </BoxRow>
         </BoxRow>

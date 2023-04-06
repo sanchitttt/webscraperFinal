@@ -18,6 +18,7 @@ module.exports = {
       'blue': '#4DB7FE',
       'black': '#444444',
       'lightBlack': '#333333',
+	'blueHover':'#3285BC',
       'buttons': {
         'primary': '#4DB7FE'
       }

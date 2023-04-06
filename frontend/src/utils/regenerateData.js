@@ -26,7 +26,8 @@ const fn3 = async () => {
 }
 const fn4 = async () => {
     const bcaResults = await fetchTwitter("bachelor in computer application");
-    if (bcaResults) return bcaResults;
+    const mcaResults = await fetchTwitter("master in computer application");
+    if (bcaResults && mcaResults) return bcaResults;
 }
 
 

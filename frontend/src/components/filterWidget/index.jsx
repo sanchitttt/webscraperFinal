@@ -94,16 +94,16 @@ function FilterModal({ showFilters, setShowFilters, showSettings, setShowSetting
                 <div className={`${themeValue === 'dark' ? 'text-white' : 'text-[#444]'}`}>Select</div> <span className='text-[#4DB7FE]'>social media</span>
             </Box>
             <BoxRow className='gap-[25px]' style={{ flexWrap: 'wrap' }}>
-                <div role='button' aria-describedby='button' onClick={() => toggler('quora')} className={`px-[30px] py-[10px] shadow-v7 flex items-center justify-center gap-[5px] rounded-[5px] border-[1px] ${quoraSelected ? "text-blue border-blue" : themeValue === 'dark' ? "text-[#444]" : "text-white"}`}>
+                <div role='button' aria-describedby='button' onClick={() => toggler('quora')} className={`px-[30px] py-[10px] shadow-v7 flex items-center justify-center gap-[5px] rounded-[5px] border-[1px] ${quoraSelected ? "text-blue border-blue" : themeValue === 'dark' ? "text-[#444]" : "text-[#444]"}`}>
                     <QuoraIcon onClick={() => toggler('quora')} width='18px' height='18px' fill={`${quoraSelected ? "#4DB7FE" : "#444"}`} /> Quora
                 </div>
-                <div role='button' aria-describedby='button' onClick={() => toggler('youtube')} className={`px-[30px] py-[10px] gap-[5px] shadow-v7 flex items-center justify-center rounded-[5px] border-[1px]  ${youtubeSelected ? "text-blue border-blue" : themeValue === 'dark' ? "text-[#444]" : "text-white"}`}>
+                <div role='button' aria-describedby='button' onClick={() => toggler('youtube')} className={`px-[30px] py-[10px] gap-[5px] shadow-v7 flex items-center justify-center rounded-[5px] border-[1px]  ${youtubeSelected ? "text-blue border-blue" : themeValue === 'dark' ? "text-[#444]" : "text-[#444]"}`}>
                     <YoutubeIcon onClick={() => toggler('youtube')} width='18px' height='18px' fill={youtubeSelected ? "#4DB7FE" : "#444"} /> Youtube
                 </div>
-                <div role='button' aria-describedby='button' onClick={() => toggler('reddit')} className={`px-[30px] py-[10px] gap-[5px] shadow-v7 flex items-center justify-center rounded-[5px] border-[1px] ${redditSelected ? "text-blue border-blue" : themeValue === 'dark' ? "text-[#444] " : "text-white"}`}>
+                <div role='button' aria-describedby='button' onClick={() => toggler('reddit')} className={`px-[30px] py-[10px] gap-[5px] shadow-v7 flex items-center justify-center rounded-[5px] border-[1px] ${redditSelected ? "text-blue border-blue" : themeValue === 'dark' ? "text-[#444] " : "text-[#444]"}`}>
                     <RedditIcon onClick={() => toggler('reddit')} width='18px' height='18px' fill={redditSelected ? "#4DB7FE" : "#444"} /> Reddit
                 </div>
-                <div role='button' aria-describedby='button' onClick={() => toggler('twitter')} className={`px-[30px] py-[10px] gap-[5px] shadow-v7 flex items-center justify-center rounded-[5px] border-[1px]  ${twitterSelected ? "text-blue border-blue" : themeValue === 'dark' ? "text-[#444]" : "text-white"}`}>
+                <div role='button' aria-describedby='button' onClick={() => toggler('twitter')} className={`px-[30px] py-[10px] gap-[5px] shadow-v7 flex items-center justify-center rounded-[5px] border-[1px]  ${twitterSelected ? "text-blue border-blue" : themeValue === 'dark' ? "text-[#444]" : "text-[#444]"}`}>
                     <TwitterIcon onClick={() => toggler('twitter')} width='18px' height='18px' fill={twitterSelected ? "#4DB7FE" : "#444"} /> Twitter
                 </div>
             </BoxRow>
